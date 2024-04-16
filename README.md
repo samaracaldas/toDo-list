@@ -2,6 +2,21 @@
 
 <h2>:page_with_curl: Description</h2>
 <p id="description">Neste projeto, eu criei uma lista de tarefas programada com o Framework Angular 17 e TypeScript.</p>
+
+
+Tópicos Abordados:
+- Control Flow
+- Interface
+- Signal
+- ViewChild
+- ChangeDetectorRef
+- Manipulação de DOM
+- Injeção de Dependências
+- Inputs e Outputs
+- Data Binding
+- Event Binding
+- LocalStorage
+- EventEmitter
   
 <h2>💻 Built with</h2>
 
@@ -12,6 +27,6 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" height="40" alt="html5 logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" height="40" alt="css3 logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" height="40" alt="scss logo" />
   <img width="12" />
 </div>
