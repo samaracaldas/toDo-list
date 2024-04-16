@@ -1,5 +1,7 @@
  <h1 align="center" id="title">To Do List</h1>
 
+ ![toDo-list](https://github.com/samaracaldas/toDo-list/assets/92318337/5766dc52-2a94-4649-bc70-964806f6ed29)
+
 <h2>:page_with_curl: Description</h2>
 <p id="description">Neste projeto, eu criei uma lista de tarefas programada com o Framework Angular 17 e TypeScript.</p>
 
