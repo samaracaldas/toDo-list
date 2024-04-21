@@ -1,0 +1,5 @@
+<h3 class="custom-dialog-title" mat-dialog-title>{{ data.message }}</h3>
+<div class="custom-dialog-actions" mat-dialog-actions>
+  <button class="custom-dialog-button" mat-button [mat-dialog-close]="true" cdkFocusInitial>{{ data.buttonText.ok }}</button>
+  <button class="custom-dialog-button" mat-button [mat-dialog-close]="false">{{ data.buttonText.cancel }}</button>
+</div>

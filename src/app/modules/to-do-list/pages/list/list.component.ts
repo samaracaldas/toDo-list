@@ -3,8 +3,9 @@ import { IListItems } from '../../interface/IListItems.interface';
 import { ELocalStorage } from '../../enum/ELocalStorage.enum';
 import { InputAddItemComponent } from '../../components/input-add-item/input-add-item.component';
 import { InputListItemComponent } from '../../components/input-list-item/input-list-item.component';
+import { DialogsComponent } from '../../components/dialogs/dialogs.component';
+import { MatDialog } from '@angular/material/dialog';
 
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list',
@@ -15,6 +16,8 @@ import Swal from 'sweetalert2';
 })
 
 export class ListComponent {
+
+  constructor(private dialog: MatDialog) {}
 
   public addItem = signal(true);
 
@@ -90,35 +93,44 @@ export class ListComponent {
   }
 
   public deleteItem(id: string) {
-    Swal.fire({
-      title: 'Tem certeza?',
-      text: 'Você não poderá reverter isso!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Sim, delete o item',
-    }).then((result) => {
-      if (result.isConfirmed) {
+    const dialogRef = this.dialog.open(DialogsComponent, {
+      data: {
+        message: 'Tem certeza? Você não poderá reverter isso!',
+        buttonText: {
+          ok: 'Sim, delete o item',
+          cancel: 'Cancelar'
+        }
+      }
+    });
+  
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
         this.#setListItems.update((oldValue: IListItems[]) => {
           return oldValue.filter((res) => res.id !== id);
         });
-
-        return this.#updateLocalStorage();
+  
+        this.#updateLocalStorage();
       }
     });
   }
-
+  
   public deleteAllItems() {
-    Swal.fire({
-      title: 'Tem certeza?',
-      text: 'Você não poderá reverter isso!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Sim, delete tudo',
-    }).then((result) => {
-      if (result.isConfirmed) {
+    const dialogRef = this.dialog.open(DialogsComponent, {
+      data: {
+        message: 'Tem certeza? Você não poderá reverter isso!',
+        buttonText: {
+          ok: 'Sim, delete tudo',
+          cancel: 'Cancelar'
+        }
+      }
+    });
+  
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
         localStorage.removeItem(ELocalStorage.MY_LIST);
-        return this.#setListItems.set(this.#parseItems());
+        this.#setListItems.set(this.#parseItems());
       }
     });
   }
+  
 }

@@ -1,0 +1,39 @@
+
+.custom-dialog-title {
+    font-size: 20px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+  .custom-dialog-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .custom-dialog-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Estilizar o botão de foco inicial */
+  .custom-dialog-button:first-child {
+    background-color: red;
+  }
+
+  .custom-dialog-button:first-child:hover {
+    background-color: #ca2020;
+  }
+
+ 
+  .custom-dialog-button:hover {
+    background-color: var(--primary-010);
+  }
